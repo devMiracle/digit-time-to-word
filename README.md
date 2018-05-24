@@ -1,13 +1,13 @@
 # digit-time-to-word
 A Module that helps You convert time from numbers to word
-###Installation
+### Installation
 
-######**using npm**
+###### **using npm**
 
 ```
 $ npm i digit-time-to-word --save
 ```
-######**In Node Js**
+###### **In Node Js**
 ```javascript
 //load the digit time to word module
 const timeToWord = require('digit-time-to-word');
