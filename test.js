@@ -1,11 +1,16 @@
 const timeToWord = require('./index');
 
 // console.log(timeToWord);
-let timeInWord = timeToWord.getTimeInWord(2,24);
-if(timeInWord.status){
-    //if timeInWord.status === true
-    console.log(`Hour : ${timeInWord.hour}  Minute : ${timeInWord.minute}  ===>  ${timeInWord.time}`);    
-}else{
-    //if timeInWord.status === false
-    console.log(timeInWord.error);
-}
+
+setInterval(()=>{
+    let date =  new Date();
+    //console.log(`${date.getHours()} : ${date.getMinutes()} : ${date.getSeconds()}`);
+    if(date.getSeconds() === 59){
+        let timeInWord = timeToWord.getTimeInWord(date.getHours(),date.getMinutes());
+        if(timeInWord.status){
+            console.log(`Hour : ${timeInWord.hour}  Minute : ${timeInWord.minute}  ===>  ${timeInWord.time}`);    
+        }else{
+            console.log(timeInWord.error);
+        }
+    }
+},1000);
